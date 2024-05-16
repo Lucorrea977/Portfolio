@@ -1,0 +1,66 @@
+/* styles.css */
+
+/* Estilo para el cuerpo de la página */
+body {
+    font-family: initial;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+}
+/* Estilo para la imagen */
+img {
+    width: 250px; /* Ancho de la imagen */
+    right: 55%;
+     margin-left: 42%;/* Altura automática para mantener la proporción */
+    border-radius: 5%; /* Borde redondeado para hacer un círculo */
+    padding-top: 50px;
+    
+}
+
+/* Estilo para la barra de navegación */
+nav {
+    background-color: #000;
+    padding: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+/* Estilo para los iconos en la barra de navegación */
+nav a img {
+    width: 30px; /* Ancho de los íconos */
+    height:auto; /* Altura automática para mantener la proporción */
+    margin: 100px -130px; /* Espacio entre los íconos */
+    margin-left: 350px;
+    padding-top:  -5px ;
+    
+}
+
+/* Estilo para los enlaces al pasar el ratón */
+nav a:hover {
+    color: #394683;
+}
+
+/* Estilo para el encabezado */
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: #fff;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Estilo para el pie de página */
+footer {
+    background-color: #000;
+    color: #faf7f7;
+    text-align: center;
+    font-family: initial ;
+    padding: 10px;
+     width: 100%;
+}
