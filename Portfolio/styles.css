@@ -1,66 +1,134 @@
-/* styles.css */
-
-/* Estilo para el cuerpo de la página */
 body {
     font-family: initial;
     margin: 0;
     padding: 0;
-    background-color: #000;
+    background: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-purple-beautiful-romantic-cool-fresh-banner-background-image_156587.jpg') no-repeat center center fixed; /* Imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
     color: #fff;
 }
-/* Estilo para la imagen */
-img {
-    width: 250px; /* Ancho de la imagen */
-    right: 55%;
-     margin-left: 42%;/* Altura automática para mantener la proporción */
-    border-radius: 5%; /* Borde redondeado para hacer un círculo */
-    padding-top: 50px;
-    
+
+/* Estilo para el contenedor con fondo transparente */
+.content-wrapper {
+    background-color: rgba(74, 70, 75, 0.675); /* Fondo con transparencia */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 20px; /* Espaciado externo */
+}
+
+/* Estilo para la imagen del perfil */
+.profile-image {
+    width: 220px; /* Ancho de la imagen */
+    margin-left: calc(50% - 120px); /* Centrado horizontal */
+    border-radius: 15%; /* Borde redondeado */
+    padding-top: 10px;
 }
 
 /* Estilo para la barra de navegación */
 nav {
-    background-color: #000;
+    background-color: transparent; /* Fondo transparente para el nav */
     padding: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten y se ubiquen en nuevas líneas si es necesario */
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav a {
-    color: #fff;
     text-decoration: none;
-    margin-right: 20px;
-}
-/* Estilo para los iconos en la barra de navegación */
-nav a img {
-    width: 30px; /* Ancho de los íconos */
-    height:auto; /* Altura automática para mantener la proporción */
-    margin: 100px -130px; /* Espacio entre los íconos */
-    margin-left: 350px;
-    padding-top:  -5px ;
-    
+    margin-right: 5px;
 }
 
-/* Estilo para los enlaces al pasar el ratón */
-nav a:hover {
-    color: #394683;
+/* Estilo para los botones */
+.button {
+    display: inline-block;
+    padding: 10px 15px; /* Ajustar padding para hacer los botones más compactos */
+    margin: 5px; /* Reducir el margen entre botones */
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #ff6ec4, #7873f5) 1; /* Borde degradado */
+    border-radius: 5px;
+    color: #fff;
+    background-color: transparent;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background-color: #e2eeea7b;
+    color: #fff;
+}
+
+/* Estilo para los iconos en la barra de navegación */
+.icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 30px; /* Ancho de los íconos */
+    height: auto; /* Altura automática para mantener la proporción */
+    margin: 0 10px; /* Espacio entre los íconos */
+    vertical-align: middle; /* Alineación vertical */
 }
 
 /* Estilo para el encabezado */
 h1 {
     text-align: center;
     margin-top: 50px;
-    color: #fff;
+    color: transparent;
+    background: linear-gradient(45deg, #dc9ec3, #7572db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h2 {
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700; /* Opción de peso de la fuente */
 }
 
 /* Estilo para el pie de página */
 footer {
-    background-color: #000;
-    color: #faf7f7;
+    background-color: transparent; /* Fondo transparente para el footer */
+    color: #d679f0c2;
     text-align: center;
-    font-family: initial ;
+    font-family: initial;
     padding: 10px;
-     width: 100%;
+    width: 98%;
+}
+
+/* Media queries para hacerlo responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Cambiar la dirección de los elementos a columna en pantallas más pequeñas */
+        align-items: flex-start; /* Alinear los elementos al inicio del contenedor */
+    }
+
+    .profile-image {
+        width: 200px; /* Ajustar el tamaño de la imagen en pantallas más pequeñas */
+        margin-left: calc(50% - 100px); /* Centrar la imagen */
+    }
+
+    .icon-container {
+        justify-content: center; /* Centrar los íconos en pantallas más pequeñas */
+        width: 100%; /* Asegurar que los íconos ocupen el ancho completo */
+        margin-top: 10px; /* Añadir espacio arriba de los íconos */
+    }
+}
+
+@media (max-width: 480px) {
+    .button {
+        padding: 8px 10px; /* Ajustar aún más el padding para pantallas muy pequeñas */
+        margin: 3px; /* Reducir aún más el margen entre botones */
+        font-size: 14px; /* Ajustar el tamaño de la fuente */
+    }
+
+    .profile-image {
+        width: 150px; /* Ajustar el tamaño de la imagen en pantallas muy pequeñas */
+        margin-left: calc(50% - 75px); /* Centrar la imagen */
+    }
+
+    nav a {
+        margin-right: 0; /* Eliminar el margen derecho en pantallas muy pequeñas */
+        margin-bottom: 10px; /* Añadir margen inferior para separar los enlaces */
+    }
 }
