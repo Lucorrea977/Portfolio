@@ -10,18 +10,20 @@
     <div class="content-wrapper">
         <h1>¡Hola a todos y todas! </h1>
         <p>En esta sección les cuento un poco sobre mí...</p>
-        <p>Soy una persona segura, responsable y siempre positiva. Disfruto hablar, debatir y aportar ideas. Me considero una buena compañera y me gusta estar rodeada de otras personas, aunque también disfruto de mi tiempo a solas. Soy apasionada por el arte, la musca, el diseño, los libros y la naturaleza.</p>
-        <p>Fui diseñadora de indumentaria hasta hace un año, cuando decidí emergerme en la programación como desarrolladora web. Al principio, fue lanzarme a algo totalmente nuevo y con cero conocimiento, pero una vez que me adentré y fui conociendo más sobre el desarrollo web, más sentía que esto era para mí. Superarme día a día, pasar horas y horas codeando, y mantenerme positiva cuando algo no salía bien, se convirtieron en mi rutina.</p>
+        <p>Soy una persona segura, responsable y siempre positiva. Disfruto hablar, debatir y aportar ideas. Me considero una buena compañera y me gusta estar rodeada de otras personas, aunque también disfruto de mi tiempo a solas. Soy apasionada por el arte, la música, el diseño, los libros y la naturaleza.</p>
+        <p>Fui diseñadora de indumentaria hasta hace un año, cuando decidí adentrarme en la programación como desarrolladora web. Al principio, fue lanzarme a algo totalmente nuevo y desconocido, pero una vez que me adentré y fui conociendo más sobre el desarrollo web, más sentía que esto era para mí. Superarme día a día, pasar horas y horas codificando, y mantenerme positiva cuando algo no salía bien, se convirtieron en mi rutina.</p>
         <p>Hoy en día, estoy conforme y feliz con la decisión que tomé de haber empezado este nuevo camino. Como en la vida misma, en la programación hay altos y bajos, pero siempre mantengo la actitud y el positivismo.</p>
         
         <button class="button" id="likeButton"><span id="likeIcon">👍</span> <span id="likeCount">0</span></button>
         <button class="button" id="dislikeButton"><span id="dislikeIcon">👎</span> <span id="dislikeCount">0</span></button>
         
+        <!-- Enlaces a otras secciones utilizando rutas relativas -->
         <a href="skills.html" class="button">Aptitudes</a>
         <a href="services.html" class="button">Servicios</a>
-        <a href="Portfolio.html" class="button">Inicio</a>
+        <a href="index.html" class="button">Inicio</a>
     </div>
 
+    <!-- JavaScript para manejar el conteo de likes y dislikes -->
     <script>
         let likeCount = parseInt(localStorage.getItem('likeCount')) || 0;
         let dislikeCount = parseInt(localStorage.getItem('dislikeCount')) || 0;
