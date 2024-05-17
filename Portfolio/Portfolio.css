@@ -1,0 +1,137 @@
+body {
+    font-family: initial;
+    margin: 0;
+    padding: 0;
+    background: url('https://www.shutterstock.com/shutterstock/videos/1048211866/thumb/1.jpg?ip=x480') no-repeat center center fixed;
+    background-size: cover; 
+    color: #fff;
+}
+
+
+.content-wrapper {
+    max-width: 800px; 
+  
+    margin: 60px auto; 
+    padding: 30px; 
+    border-radius: 10px; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.profile-image {
+    width: 200px; 
+    margin-left: calc(50% - 120px); 
+    border-radius: 0%; 
+    padding-top: 10px;
+}
+
+
+nav {
+    background-color: transparent; 
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+
+.button {
+    display: inline-block;
+    padding: 10px 15px; 
+    margin: 5px; 
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #ff6ec4, #7873f5) 1; 
+    border-radius: 5px;
+    color: #fff;
+    background-color: transparent;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background-color: #e2eeea7b;
+    color: #fff;
+}
+
+
+.icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 30px; 
+    height: auto; 
+    margin: 0 10px; 
+    vertical-align: middle;
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: transparent;
+    background: linear-gradient(45deg, #dc9ec3, #7572db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    text-align: center;
+    font-size: 23px;
+    font-family: initial;
+    margin-right: 30px;
+    font-weight: 300; 
+}
+
+
+footer {
+    background-color: transparent; 
+    color: #d679f0c2;
+    text-align: center;
+    font-family: initial;
+    padding: 10px;
+    width: 96%;
+}
+
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .profile-image {
+        width: 200px; 
+        margin-left: calc(50% - 100px); 
+    }
+
+    .icon-container {
+        justify-content: center; 
+        width: 100%; 
+        margin-top: 10px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .button {
+        padding: 8px 10px; 
+        margin: 3px; 
+        font-size: 14px; 
+    }
+
+    .profile-image {
+        width: 150px; 
+        margin-left: calc(50% - 75px); 
+    }
+
+    nav a {
+        margin-right: 0; 
+        margin-bottom: 10px; 
+    }
+}
