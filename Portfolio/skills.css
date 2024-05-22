@@ -1,16 +1,21 @@
 body {
     font-family: Arial, sans-serif;
+    
     margin: 0;
     padding: 0;
     background-image: url('https://www.shutterstock.com/shutterstock/videos/1048211866/thumb/1.jpg?ip=x480');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    color: #fff; /* Texto en blanco */
+    color: #fcf7f7;
+  
 }
 
+
+
+
 .content-wrapper {
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(25, 25, 25, 0.5); 
     padding: 10px;
     border-radius: 10px;
     margin: 20px auto; 
@@ -19,6 +24,8 @@ body {
 
 p {
     font-size: 17px; 
+    color: #f7f2f2;
+
 }
 
 h1, h2 {
@@ -26,7 +33,7 @@ h1, h2 {
     background: linear-gradient(45deg, #dc9ec3, #7572db); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #faf5f5;
     padding-bottom: 10px;
 }
 
@@ -42,17 +49,19 @@ h1, h2 {
     background-color: transparent;
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
 }
 
 .button:hover {
     background-color: #e2eeea7b; 
-    color: #fff; /
+    
 }
 
 
 @media (max-width: 1200px) {
     .content-wrapper {
         max-width: 80%;
+    
     }
 }
 
@@ -64,6 +73,7 @@ h1, h2 {
 
     p {
         font-size: 16px; 
+        
     }
 
     .button {
@@ -80,10 +90,13 @@ h1, h2 {
 
     h1, h2 {
         font-size: 24px; 
+        
     }
 
     p {
         font-size: 15px; 
+        
+        
     }
 
     .button {

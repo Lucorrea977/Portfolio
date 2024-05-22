@@ -87,15 +87,15 @@ h2 {
     background-color: transparent;
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
+    text-decoration: none; /* Eliminar subrayado */
 }
 
 .button:hover {
     background-color: #e2eeea7b;
-    color: #fff;
 }
 
 @media (max-width: 768px) {
     .service-card {
         width: calc(100% - 20px);
     }
-}
+} 
