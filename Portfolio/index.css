@@ -107,40 +107,29 @@ footer {
     padding: 10px;
     width: 95%;
 }
-
-
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column; 
-        align-items: flex-start; 
+    @media only screen and (max-width: 600px) {
+        .content-wrapper {
+            width: 85%;
+            margin: 20% auto; /* Ajusta el margen */
+        }
+    
+        .profile-image {
+            width: 50%;
+            max-width: 150px; /* Ajusta el ancho máximo */
+            margin-left: 130px;
+        }
+    
+        .icon-container {
+      
+            margin-left: 120px;
+        }
+    
+        nav {
+            padding: 5%;
+        }
+    
+        .button {
+            padding: 2% 1%; /* Ajusta el relleno */
+            margin: 1%;
+        }
     }
-
-    .profile-image {
-        width: 200px; 
-        margin-left: calc(50% - 100px); 
-    }
-
-    .icon-container {
-        justify-content: center; 
-        width: 100%; 
-        margin-top: 10px; 
-    }
-}
-
-@media (max-width: 480px) {
-    .button {
-        padding: 8px 10px; 
-        margin: 3px; 
-        font-size: 14px; 
-    }
-
-    .profile-image {
-        width: 150px; 
-        margin-left: calc(50% - 75px); 
-    }
-
-    nav a {
-        margin-right: 0; 
-        margin-bottom: 10px; 
-    }
-}
