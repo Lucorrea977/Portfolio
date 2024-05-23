@@ -46,8 +46,8 @@ h2 {
     flex-direction: column;
     gap: 5px;
     align-items: center;
-    width: 50%; 
-    margin-left: 180px;
+    width: 60%; 
+    margin-left: 145px;
 }
 
 /* Iconos de contacto */
@@ -127,6 +127,20 @@ h2 {
 .like-count {
     margin-left: 10px;
 }
+.home-button {
+    border: 2px solid transparent; /* Borde inicialmente transparente */
+    padding: 10px 20px; /* Ajusta el relleno según sea necesario */
+    border-radius: 5px; /* Ajusta el radio de borde según sea necesario */
+    background-image: linear-gradient(45deg, #dc9ec3, #7572db); /* Degradado para el fondo del botón */
+    color: #fff; /* Color del texto */
+    text-decoration: none; /* Quita la decoración del texto */
+    transition: border-color 0.3s; /* Transición suave para el color del borde */
+}
+
+/* Cambia el color del borde al pasar el mouse sobre el botón */
+.home-button:hover {
+    border-color: #fff; /* Cambia el color del borde al blanco al pasar el mouse */
+}
 
 @media screen and (max-width: 767px) {
     .proyecto-card {
@@ -135,7 +149,8 @@ h2 {
     #contactos {
         gap: 20px; /* Ajustar el espacio entre los iconos */
         justify-content: flex-end; 
-        margin-left: 85px ;
+        margin-left: -10px ;
+        width: 95%;
     }
 
     .contact-icons {
