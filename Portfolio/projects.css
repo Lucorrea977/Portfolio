@@ -128,18 +128,18 @@ h2 {
     margin-left: 10px;
 }
 .home-button {
-    border: 2px solid transparent; /* Borde inicialmente transparente */
-    padding: 10px 20px; /* Ajusta el relleno según sea necesario */
-    border-radius: 5px; /* Ajusta el radio de borde según sea necesario */
-    background-image: linear-gradient(45deg, #dc9ec3, #7572db); /* Degradado para el fondo del botón */
-    color: #fff; /* Color del texto */
-    text-decoration: none; /* Quita la decoración del texto */
-    transition: border-color 0.3s; /* Transición suave para el color del borde */
+    border: 2px solid transparent; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    background-image: linear-gradient(45deg, #dc9ec3, #7572db); 
+    color: #fff; 
+    text-decoration: none; 
+    transition: border-color 0.3s; 
 }
 
 /* Cambia el color del borde al pasar el mouse sobre el botón */
 .home-button:hover {
-    border-color: #fff; /* Cambia el color del borde al blanco al pasar el mouse */
+    border-color: #fff; 
 }
 
 @media screen and (max-width: 767px) {
@@ -147,7 +147,7 @@ h2 {
         width: calc(50% - 10px);
     }
     #contactos {
-        gap: 20px; /* Ajustar el espacio entre los iconos */
+        gap: 20px; 
         justify-content: flex-end; 
         margin-left: -10px ;
         width: 95%;
