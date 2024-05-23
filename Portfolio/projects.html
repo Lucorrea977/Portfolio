@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Proyectos</title>
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body>
+    <section class="main-section">
+        <section class="container">
+            <section id="inputs">
+                <h2>Agregar Proyecto</h2>
+                <form id="proyecto-form">
+                    <input type="text" id="titulo" placeholder="Título del proyecto" required>
+                    <input type="text" id="descripcion" placeholder="Descripción breve" required>
+                    <input type="url" id="url" placeholder="URL del proyecto" required>
+                    <button type="submit">Agregar Proyecto</button>
+                </form>
+            </section>
+            <section id="contactos" class="container">
+
+
+                <h2>Contacto</h2>
+                <div class="contact-icons">
+                    <a href="https://github.com/Lucorrea977"><img class="icon"
+                            src="https://cdn-icons-png.freepik.com/256/270/270798.png?semt=ais_hybrid" alt="GitHub"></a>
+                    <a href="https://www.linkedin.com/in/luana-camila-correa-0b662616a/"><img class="icon"
+                            src="https://cdn-icons-png.freepik.com/256/4401/4401402.png?semt=ais_hybrid"
+                            alt="LinkedIn"></a>
+                    <a href="https://wa.me/543518144466"><img class="icon"
+                            src="https://cdn-icons-png.freepik.com/256/1384/1384079.png?semt=ais_hybrid"
+                            alt="WhatsApp"></a>
+                    <a href="https://mail.google.com/mail/u/0/?hl=es#inbox"><img class="icon"
+                            src="https://cdn-icons-png.freepik.com/256/9068/9068877.png?semt=ais_hybrid"
+                            alt="Email"></a>
+
+                 
+                </div>
+                <a href="index.html" class="home-button button">Inicio</a>
+            </section>
+
+        </section>
+
+        <section id="proyectos" class="container">
+            <h2>Mis Proyectos</h2>
+            <div class="proyectos-container" id="proyectos-container">
+                <!-- Los proyectos se agregarán aquí dinámicamente -->
+            </div>
+        </section>
+    </section>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const proyectosContainer = document.getElementById('proyectos-container');
+
+        // Recuperar proyectos del almacenamiento local o inicializar una lista vacía
+        let projects = JSON.parse(localStorage.getItem('projects')) || [];
+
+        const fetchProjects = () => {
+            proyectosContainer.innerHTML = '';
+            projects.forEach((project, index) => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'proyecto-card';
+                projectCard.innerHTML = `
+                        <h3>${project.title}</h3>
+                        <p>${project.description}</p>
+                        <a href="${project.url}" target="_blank">Ver Proyecto</a>
+                        <div class="like-container">
+                            <button class="like-button ${project.liked ? 'liked' : ''}" data-index="${index}">❤️</button>
+                            <span class="like-count">${project.likes}</span>
+                            <button class="delete-button" data-index="${index}">🗑️</button>
+                        </div>
+                    `;
+                proyectosContainer.appendChild(projectCard);
+            });
+        };
+
+        // Actualizar proyectos en el almacenamiento local
+        const updateLocalStorage = () => {
+            localStorage.setItem('projects', JSON.stringify(projects));
+        };
+
+        const form = document.getElementById('proyecto-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newProject = {
+                title: form.titulo.value,
+                description: form.descripcion.value,
+                url: form.url.value,
+                likes: 0,
+                liked: false
+            };
+            projects.push(newProject);
+            fetchProjects();
+            updateLocalStorage();
+            form.reset();
+        });
+
+        proyectosContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('like-button')) {
+                const index = e.target.getAttribute('data-index');
+                const project = projects[index];
+                project.liked = !project.liked;
+                project.likes = project.liked ? 1 : 0;
+                fetchProjects();
+                updateLocalStorage();
+            } else if (e.target.classList.contains('delete-button')) {
+                const index = e.target.getAttribute('data-index');
+                projects.splice(index, 1);
+                fetchProjects();
+                updateLocalStorage();
+            }
+        });
+
+        // Cargar proyectos al cargar la página
+        fetchProjects();
+    });
+</script>
+</body>
+
+</html>

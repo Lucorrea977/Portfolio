@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí - Portfolio</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <div class="content-wrapper">
+        <h1>¡Hola a todos y todas!</h1>
+        <p>En esta sección les cuento un poco sobre mí...</p>
+        <p>Soy una persona segura, responsable y siempre positiva. Disfruto hablar, debatir y aportar ideas. Me considero una buena compañera y me gusta estar rodeada de otras personas, aunque también disfruto de mi tiempo a solas. Soy apasionada por el arte, la música, el diseño, los libros y la naturaleza.</p>
+        <p>Fui diseñadora de indumentaria hasta hace un año, cuando decidí adentrarme en la programación como desarrolladora web. Al principio, fue lanzarme a algo totalmente nuevo y desconocido, pero una vez que me adentré y fui conociendo más sobre el desarrollo web, más sentía que esto era para mí. Superarme día a día, pasar horas y horas codificando, y mantenerme positiva cuando algo no salía bien, se convirtieron en mi rutina.</p>
+        <p>Hoy en día, estoy conforme y feliz con la decisión que tomé de haber empezado este nuevo camino. Como en la vida misma, en la programación hay altos y bajos, pero siempre mantengo la actitud y el positivismo.</p>
+        
+        <button class="button" id="likeButton"><span id="likeIcon">❤️</span> <span id="likeCount">0</span></button>
+        
+        
+      
+        <a href="skills.html" class="button">Aptitudes y objetivos</a>
+        <a href="services.html" class="button">Servicios</a>
+        <a href="projects.html" class="button">Proyectos</a>
+        <a href="index.html" class="button">Inicio</a>
+    </div>
+
+    
+    <script>
+        let likeCount = parseInt(localStorage.getItem('likeCount')) || 0;
+        let liked = JSON.parse(localStorage.getItem('liked')) || false;
+
+        document.getElementById('likeCount').textContent = likeCount;
+
+        document.getElementById('likeButton').addEventListener('click', function() {
+            if (liked) {
+                likeCount--;
+            } else {
+                likeCount++;
+            }
+            liked = !liked;
+            localStorage.setItem('likeCount', likeCount);
+            localStorage.setItem('liked', liked);
+            document.getElementById('likeCount').textContent = likeCount;
+            document.getElementById('likeIcon').textContent = liked ? '❤️' : '🤍';
+        });
+
+        // Actualiza el ícono según el estado inicial
+        document.getElementById('likeIcon').textContent = liked ? '❤️' : '🤍';
+    </script>
+</body>
+</html>

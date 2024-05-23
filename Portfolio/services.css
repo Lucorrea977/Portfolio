@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://www.shutterstock.com/shutterstock/videos/1048211866/thumb/1.jpg?ip=x480');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.content-wrapper {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+h1 {
+    text-align: center;
+    background: linear-gradient(45deg, #dc9ec3, #7572db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.service-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: calc(50% - 20px);
+    max-width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    text-align: center;
+    background: linear-gradient(45deg, #dc9ec3, #7572db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+}
+
+.contact {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.icon {
+    width: 30px;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 10px;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #ff6ec4, #7873f5) 1;
+    border-radius: 5px;
+    color: #fff;
+    background-color: transparent;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none; /* Eliminar subrayado */
+}
+
+.button:hover {
+    background-color: #e2eeea7b;
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        width: calc(100% - 20px);
+    }
+} 
