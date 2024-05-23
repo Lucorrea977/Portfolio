@@ -109,19 +109,19 @@ footer {
 }
     @media only screen and (max-width: 600px) {
         .content-wrapper {
-            width: 85%;
-            margin: 20% auto; /* Ajusta el margen */
+            width: calc(100% - 3cm); /* Resta 4 centímetros del ancho total */
+            margin: 2cm auto; /* Establece un margen superior e inferior de 2 centímetros y margen izquierdo y derecho automáticos */
         }
     
         .profile-image {
             width: 50%;
             max-width: 150px; /* Ajusta el ancho máximo */
-            margin-left: 130px;
+            margin-left: 110px;
         }
     
         .icon-container {
       
-            margin-left: 120px;
+            margin-left: 80px;
         }
     
         nav {

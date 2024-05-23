@@ -11,18 +11,7 @@
 <body>
     <section class="main-section">
         <section class="container">
-            <section id="inputs">
-                <h2>Agregar Proyecto</h2>
-                <form id="proyecto-form">
-                    <input type="text" id="titulo" placeholder="Título del proyecto" required>
-                    <input type="text" id="descripcion" placeholder="Descripción breve" required>
-                    <input type="url" id="url" placeholder="URL del proyecto" required>
-                    <button type="submit">Agregar Proyecto</button>
-                </form>
-            </section>
             <section id="contactos" class="container">
-
-
                 <h2>Contacto</h2>
                 <div class="contact-icons">
                     <a href="https://github.com/Lucorrea977"><img class="icon"
@@ -36,12 +25,9 @@
                     <a href="mailto:luucamila6@gmail.com"><img class="icon"
                             src="https://cdn-icons-png.freepik.com/256/9068/9068877.png?semt=ais_hybrid"
                             alt="Email"></a>
-
-                 
                 </div>
                 <a href="index.html" class="home-button button">Inicio</a>
             </section>
-
         </section>
 
         <section id="proyectos" class="container">
@@ -51,74 +37,79 @@
             </div>
         </section>
     </section>
-</body>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const proyectosContainer = document.getElementById('proyectos-container');
 
-        // Recuperar proyectos del almacenamiento local o inicializar una lista vacía
-        let projects = JSON.parse(localStorage.getItem('projects')) || [];
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+    const proyectosContainer = document.getElementById('proyectos-container');
 
-        const fetchProjects = () => {
-            proyectosContainer.innerHTML = '';
-            projects.forEach((project, index) => {
-                const projectCard = document.createElement('div');
-                projectCard.className = 'proyecto-card';
-                projectCard.innerHTML = `
-                        <h3>${project.title}</h3>
-                        <p>${project.description}</p>
-                        <a href="${project.url}" target="_blank">Ver Proyecto</a>
-                        <div class="like-container">
-                            <button class="like-button ${project.liked ? 'liked' : ''}" data-index="${index}">❤️</button>
-                            <span class="like-count">${project.likes}</span>
-                            <button class="delete-button" data-index="${index}">🗑️</button>
-                        </div>
-                    `;
-                proyectosContainer.appendChild(projectCard);
-            });
-        };
+    // Lista de proyectos
+    let projects = [
+        {
+            title: 'PI-POKEMON(HENRY)',
+            description: ' La aplicación permite buscar, ordenar y crear Pokémon personalizados. Los Pokémon se muestran en tarjetas, y al hacer clic en una tarjeta, se pueden ver los detalles del Pokémon.',
+            url: 'https://pi-pokemon-main-six.vercel.app/',
+            likes: 0,
+            liked: false
+        }
+        // Añadir más proyectos próximamente
+    ];
 
-        // Actualizar proyectos en el almacenamiento local
-        const updateLocalStorage = () => {
-            localStorage.setItem('projects', JSON.stringify(projects));
-        };
-
-        const form = document.getElementById('proyecto-form');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const newProject = {
-                title: form.titulo.value,
-                description: form.descripcion.value,
-                url: form.url.value,
-                likes: 0,
-                liked: false
-            };
-            projects.push(newProject);
-            fetchProjects();
-            updateLocalStorage();
-            form.reset();
-        });
-
-        proyectosContainer.addEventListener('click', (e) => {
-            if (e.target.classList.contains('like-button')) {
-                const index = e.target.getAttribute('data-index');
-                const project = projects[index];
-                project.liked = !project.liked;
-                project.likes = project.liked ? 1 : 0;
-                fetchProjects();
-                updateLocalStorage();
-            } else if (e.target.classList.contains('delete-button')) {
-                const index = e.target.getAttribute('data-index');
-                projects.splice(index, 1);
-                fetchProjects();
-                updateLocalStorage();
+    // Cargar "me gusta" desde el almacenamiento local
+    const loadLikesFromLocalStorage = () => {
+        const likes = JSON.parse(localStorage.getItem('likes')) || {};
+        projects.forEach((project, index) => {
+            if (likes[index] !== undefined) {
+                project.likes = likes[index];
+                if (project.likes > 0) {
+                    project.liked = true;
+                }
             }
         });
+    };
 
-        // Cargar proyectos al cargar la página
-        fetchProjects();
+    const fetchProjects = () => {
+        proyectosContainer.innerHTML = '';
+        projects.forEach((project, index) => {
+            const projectCard = document.createElement('div');
+            projectCard.className = 'proyecto-card';
+            projectCard.innerHTML = `
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <a href="${project.url}" target="_blank">Ver Proyecto</a>
+                <div class="like-container">
+                    <button class="like-button ${project.liked ? 'liked' : ''}" data-index="${index}">
+                        <img src="${project.liked ? 'https://cdn-icons-png.flaticon.com/512/833/833472.png' : 'https://cdn-icons-png.flaticon.com/512/833/833300.png'}" alt="like">
+                    </button>
+                    <span class="like-count">${project.likes}</span>
+                </div>
+            `;
+            proyectosContainer.appendChild(projectCard);
+        });
+    };
+
+    proyectosContainer.addEventListener('click', (e) => {
+        if (e.target.closest('.like-button')) {
+            const index = e.target.closest('.like-button').getAttribute('data-index');
+            const project = projects[index];
+            project.liked = !project.liked;
+            project.likes = project.liked ? project.likes + 1 : project.likes - 1;
+            project.likes = Math.max(project.likes, 0); // Asegurar que el contador de "me gusta" no sea negativo
+
+            // Guardar los "me gusta" en el almacenamiento local
+            const likes = JSON.parse(localStorage.getItem('likes')) || {};
+            likes[index] = project.likes;
+            localStorage.setItem('likes', JSON.stringify(likes));
+
+            fetchProjects();
+        }
     });
-</script>
+
+    // Cargar "me gusta" desde el almacenamiento local al cargar la página
+    loadLikesFromLocalStorage();
+    // Cargar proyectos al cargar la página
+    fetchProjects();
+});
+    </script>
 </body>
 
 </html>
