@@ -109,19 +109,19 @@ footer {
 }
     @media only screen and (max-width: 600px) {
         .content-wrapper {
-            width: calc(100% - 3cm); /* Resta 4 centímetros del ancho total */
-            margin: 2cm auto; /* Establece un margen superior e inferior de 2 centímetros y margen izquierdo y derecho automáticos */
+            width: calc(100% - 2cm); /* Resta 4 centímetros del ancho total */
+            margin: 10cm auto; /* Establece un margen superior e inferior de 2 centímetros y margen izquierdo y derecho automáticos */
         }
     
         .profile-image {
             width: 50%;
             max-width: 150px; /* Ajusta el ancho máximo */
-            margin-left: 110px;
+            margin-left: 120px;
         }
     
         .icon-container {
       
-            margin-left: 80px;
+            margin-left: 100px;
         }
     
         nav {
